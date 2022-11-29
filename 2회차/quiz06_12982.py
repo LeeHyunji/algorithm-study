@@ -15,10 +15,13 @@
 
 def solution(d, budget):
     answer = 0
-    for department in sorted(d):
-        budget -= department
-        if(budget<0):
-            break
-        answer +=1
+    if sum(d)<=budget : # 전체 합계를 먼저 확인하면 불필요한 for문을 사용하지 않을 수 있다.
+        answer = len(d)
+    else :
+        for department in sorted(d):
+            budget -= department
+            if(budget<0):
+                break
+            answer +=1
     
     return answer
