@@ -18,7 +18,6 @@ def dfs_recursive(graph, node, visited=[]):
     visited.append(node)
     for near_node in graph[node]:
         if near_node not in visited:
-            print(visited)
             dfs_recursive(graph, near_node, visited)
     return visited
 
