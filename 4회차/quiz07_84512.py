@@ -6,22 +6,19 @@
 # 제한사항
 # - word의 길이는 1 이상 5 이하입니다.
 # - word는 알파벳 대문자 'A', 'E', 'I', 'O', 'U'로만 이루어져 있습니다.
-def dfs(s,alphabet,dictionary) :
+def dfs(alphabet,dictionary,s="") :
     if len(s)>5 :
         return dictionary
-    
     dictionary.append(s)
     
     for char in alphabet :
-        dfs(s + char,alphabet,dictionary)
+        dfs(alphabet,dictionary,s + char)
 
 def solution(word):    
     alphabet = ["A", "E", "I", "O", "U"]
     dictionary = []
     
-    for a in alphabet :
-        dfs(a,alphabet,dictionary)
+    dfs(alphabet,dictionary)
+    print(dictionary)
         
-    return dictionary.index(word)+1
-
-print(solution("AAAAE"))
+    return dictionary.index(word)
