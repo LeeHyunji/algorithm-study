@@ -14,7 +14,6 @@ def solution(left, right):
         for i in range(1,num+1):
             if num % i == 0:
                 divisor.append(i)
-        print(divisor)
         # 약수 개수 판별
         if len(divisor)%2==0 :
             answer += num 
